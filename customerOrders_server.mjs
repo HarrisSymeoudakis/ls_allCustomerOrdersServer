@@ -34,14 +34,9 @@ app.get('/swagger/AllCustomerActiveOrders', async (req, res) => {
     // Assuming the Swagger page returns JSON data
     const swaggerData = response.data;
     console.log('Received JSON data All Customer Active Orders:', swaggerData);
-	 // Convert the JSON object to a string
-	let jsonString = JSON.stringify(swaggerData);
-
-	// Add an extra { at the beginning and an extra } at the end
-	jsonString = '{' + jsonString + '}';
-
-	// Respond with the modified JSON string
-	res.send(jsonString);
+	
+    // Respond with the data received from the API
+    res.json(swaggerData);
   } catch (error) {
     console.error('Error fetching data All Customer Active Orders:', error);
     res.status(500).send('Error fetching data All Customer Active Orders');
