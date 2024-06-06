@@ -15,6 +15,13 @@ const headers = {
   'Content-Type': 'application/json' // Adjust content type if needed
 };
 
+// Middleware to allow CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Update * to your specific origin if needed
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // All Customer Orders
 app.get('/swagger/AllCustomerActiveOrders', async (req, res) => {
   try {
