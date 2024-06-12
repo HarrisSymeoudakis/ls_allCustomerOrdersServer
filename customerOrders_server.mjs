@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.get('/swagger/AllCustomerActiveOrders', async (req, res) => {
   try {
     
-    const url = 'https://90478305-partner-retail-ondemand.cegid.cloud/Y2/90478305_003_TEST/api/customer-documents/v1?documentType=CustomerOrder&active=true';
+    const url = 'https://90478305-partner-retail-ondemand.cegid.cloud/Y2/90478305_003_TEST/api/customer-documents/v1?documentType=CustomerOrder&active=true&fields=DiscountsDetail';
 
     // Make a GET request to the Swagger page with defined headers
     const response = await axios.get(url, { headers });
